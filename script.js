@@ -1,6 +1,9 @@
 document.getElementById(`cityField`).addEventListener(`keyup`, event => {
 	event.preventDefault()
-	const url = `http://bioresearch.byu.edu/cs260/jquery/getcity.cgi?q=P`
+	const url = `http://bioresearch.byu.edu/cs260/jquery/getcity.cgi?q=${document.getElementById(`cityField`).value}`
+
+	console.log(url)
+
 	fetch(url)
 		.then(res => res.json()).then(json => {
 
